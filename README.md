@@ -106,9 +106,8 @@ make sure in kube-state metrics have topology labels zone is coming in the metri
 ```
 sum by (node, label_topology_kubernetes_io_zone, job) (kube_node_labels{job="kube-state-metrics"})
 ```
-![alt text](image.png)
+![alt text](https://github.com/anup1384/k8s-topology/blob/main/sc-1.png)
 
 if metrics are not coming then please check the kube-state-metrics pod logs for more information. or add argument `- --metric-labels-allowlist=nodes=[topology.kubernetes.io/zone]` to kube-state-metrics pod.
 
-![alt text](image-1.png)
-
+![alt text](https://github.com/anup1384/k8s-topology/blob/main/sc-2.png)
