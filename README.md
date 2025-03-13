@@ -32,8 +32,7 @@ helm upgrade --install retina oci://ghcr.io/microsoft/retina/charts/retina \
 ```
 
 ## Install MetricsConfiguration CRD
-
-Apply the MetricsConfiguration CRD using the following command or create a file named `metricsconfigcrd.yaml` with the following content change the `namespace` to your namespace:
+Apply the MetricsConfiguration CRD by creating a file named `metricsconfigcrd.yaml` with the following content. Update the `namespaces` section to include your target namespaces (this example uses `source-app` and `target-app`):
 
 ```yaml
     apiVersion: retina.sh/v1alpha1
@@ -63,9 +62,9 @@ Apply the MetricsConfiguration CRD using the following command or create a file 
     namespaces:
         include:
         # Production namespace
-        - prod
+        - source-app
         # Staging/pre-production namespace  
-        - staging
+        - target-app
 ```
 
 Apply the MetricsConfiguration CRD using the following command:
